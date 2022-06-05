@@ -20,85 +20,114 @@ def ledOn(duration):
 def ledRepeat (duration, interval, repetitions):
     for n in range(repetitions):
         ledOn(duration)
-        ledOff(duration)
+        ledOff(interval)
 def shortSignal(repetitions):
-    ledRepeat(0.3,0.3,repetitions)
+    ledRepeat(0.2,0.2,repetitions)
 def longSignal(repetitions):
-    ledRepeat(0.6,0.3,repetitions)
+    ledRepeat(0.6,0.2,repetitions)
+def letter_space():
+    ledOff(0.6)
 # letter code
 def letterA():
     print("A")
     shortSignal(1)
     longSignal(1)
-    ledOff(1)
+    letter_space()
 def letterB():
     print("B")
     longSignal(1)
     shortSignal(3)
-    ledOff(1)
+    letter_space()
 def letterC():
     print("C")
     longSignal(1)
     shortSignal(1)
     longSignal(1)
     shortSignal(1)
-    ledOff(1)
+    letter_space()
 def letterD():
     print("D")
     longSignal(1)
     shortSignal(2)
-    ledOff(1)
-def letterI():
+    letter_space()
+def letterE():
+    print("E")
+    shortSignal(1)
+    letter_space()
+def letterF():
+    print("F")
     shortSignal(2)
-    ledOff(1)
-def letterM():
+    longSignal(1)
+    shortSignal(1)
+    letter_space() 
+def letterG():
+    print("G")
     longSignal(2)
-    ledOff(1)
+    shortSignal(1)
+    letter_space()
+def letterH():
+    print("H")
+    shortSignal(4)
+    letter_space()
+def letterI():
+    print("I")
+    shortSignal(2)
+    letter_space()
+def letterM():
+    print("M")
+    longSignal(2)
+    letter_space()
 def letterN():
     print("N")
     longSignal(1)
     shortSignal(1)
-    ledOff(1)
+    letter_space()
 def letterO():
     print("O")
     longSignal(3)
-    ledOff(1)
+    letter_space()
 def letterP():
+    print("P")
     shortSignal(1)
     longSignal(2)
     shortSignal(1)
-    ledOff(1)
+    letter_space()
 def letterR():
     print("R")
     shortSignal(1)
     longSignal(1)
     shortSignal(1)
-    ledOff(1)
+    letter_space()
 def letterS():
+    print("S")
     shortSignal(3)
-    ledOff(1)
+    letter_space()
 def letterW():
+    print("W")
     shortSignal(1)
     longSignal(2)
-    ledOff(1)
+    letter_space()
 def letterZ():
+    print("Z")
     longSignal(2)
     shortSignal(2)
-    ledOff(1)
+    letter_space()
 
 def loop():
 
     while True:
-        letterD()
+        letterP()
         letterO() 
-        letterB()
+        letterP()
         letterR()
         letterA() 
-        letterN()
-        letterO()
-        letterC() 
+        letterW()
+        letterI()
+        letterO() 
+        letterN() 
+        letterE() 
         print("-------------------------------------------------------")
-        ledOff(3)
+        ledOff(1.8)
 def destroy():
 	GPIO.output(LedPin, GPIO.HIGH)     # led off
 	GPIO.cleanup()                     # Release resource
